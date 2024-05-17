@@ -10,17 +10,14 @@ class ClienteFisico extends Cliente{
         $this->cpf = $cpf;
     }
 
-    public function MostarDados(){
-        parent::MostarDados();
+    public function mostrarDados(){
+        parent::mostrarDados();
         echo "<br> RG: " . $this->rg . " <br> CPF: ". $this->cpf;
     }
 
     public function avaliaIdade() {
         if($this->idade >= 18 && $this->idade < 40) {
             echo "<br> Cliente fisico";
-        }
-        else if($this->idade > 40){
-            echo "<br> Cliente Juridico";
         }
     }
 }
