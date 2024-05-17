@@ -27,6 +27,8 @@ abstract class Cliente {
     }
 
     public function MostrarDados() {
-        Echo `<br> Codigo: {$this->codigo} <br> Nome: {$this->nome} <br> Idade: {$this->idade}`;
+        Echo "<br> Codigo: ". $this->codigo. "<br> Nome: " .$this->nome. " <br> Idade: " . $this->idade;
     }
+
+    public abstract function avaliaIdade();
 }
