@@ -41,4 +41,11 @@ Class Departamento {
         }
         return $totalPagamento;
     }
+
+    public function mostrarQtdeFilhosPorFuncionario() {
+        foreach($this->funcionarios as $funcionario) {
+            Echo "<br>" . $funcionario->getNome();
+            Echo "<br>" . $funcionario->calcularTotalFilhos() . " Filhos";
+        }
+    }
 }

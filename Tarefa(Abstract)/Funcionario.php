@@ -3,6 +3,7 @@ abstract Class Funcionario {
     protected $codigo;
     protected $nome;
     protected $salario;
+    protected $filhos = [];
 
     public function setCodigo($codigo) {
         $this->codigo = $codigo;
@@ -28,4 +29,26 @@ abstract Class Funcionario {
     }
     public abstract function calcularSalario(int $diasUteis);
 
+    public function adicionarFilho(Filhos $novoFilho) {
+        $this->filhos[] = $novoFilho;
+    }
+
+    public function removerFilho() {
+        foreach($this->filhos as $filho) {
+            if($filho->verificarMaiorIdade()) {
+                unset($this->filhos[array_search($filho, $this->filhos)]);
+            }
+        }
+    }
+
+    public function calcularTotalFilhos() {
+        return sizeof($this->filhos);
+    }
+
+    public function listarDadosFilhos() {
+        Echo "<br> Filhos:";
+        foreach($this->filhos as $filho) {
+            $filho->mostrarDados();
+        }
+    }
 }
